@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container">
+      <ng-container *ngIf= "!isLogueado(); else loggedInTitle">  
+        <a class="navbar-brand" routerLink="/">
+          <img src="../../../assets/logo50px.png" alt="">
+          CRM Congress Rental
+        </a>          
+      </ng-container>
+      <ng-template #loggedInTitle>
+        <a class="navbar-brand" routerLink="/entities">
+          <img src="../../../assets/logo50px.png" alt="">
+          CRM Congress Rental</a> 
+      </ng-template>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <ng-container *ngIf= "!isLogueado(); else loggedIn">            
+          </ng-container>
+          <ng-template #loggedIn>
+            <li class="nav-item">
+              <a class="nav-link" style="cursor: pointer" (click)="cerrarSesion()" routerLinkActive="active">
+                <i class="fas fa-tv"></i> 
+                  Logout
+              </a>
+            </li> 
+          </ng-template>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,28 @@
+<section id="team">
+    <div class="container my-3 py-3 text-center">
+      <div class="row mb-5">
+        <div class="col">
+          <h1>Grupo de Familias</h1>
+          <p class="mt-3">
+            Agrupacion general de las familias de servicios
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 py-3" *ngFor='let superFamilia of superfamilias'>
+          <div class="card text-center">
+              <div class="card-header" style="font-size: 1.2em" (click)="verFamilias(superFamilia.idt_super_familia)">
+                <i class="{{superFamilia.icono}}"></i>
+                  {{superFamilia.descripcion}}
+              </div>
+            <div class="card-body">
+                <p class="card-text">Aca iria descripcion detallada de cada uno</p>
+                <button class="btn btn-primary mx-2" (click)="verFamilias(superFamilia.idt_super_familia)">Editar</button>
+                
+                <button class="btn btn-primary mx-2" (click)="borrarFamilias(superFamilia.idt_super_familia)">Borrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
